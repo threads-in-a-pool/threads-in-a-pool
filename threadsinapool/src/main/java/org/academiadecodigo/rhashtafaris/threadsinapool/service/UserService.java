@@ -11,6 +11,6 @@ public interface UserService {
 
     void addTicket(Ticket ticket, User user);
 
-    void matchTicket(User user,Ticket ticket);
+    void matchTicket(Integer userId,Ticket ticket);
 
 }

@@ -15,12 +15,13 @@ public class User extends AbstractModel {
     private String password;
 
     @OneToMany(
-    cascade = {CascadeType.ALL},
-    orphanRemoval = true,
-    mappedBy = "users",
-    fetch = FetchType.EAGER
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true,
+            mappedBy = "users",
+            fetch = FetchType.EAGER
     )
     private List<Ticket> userTickets = new ArrayList<>();
+
 
     //getters and setters
 

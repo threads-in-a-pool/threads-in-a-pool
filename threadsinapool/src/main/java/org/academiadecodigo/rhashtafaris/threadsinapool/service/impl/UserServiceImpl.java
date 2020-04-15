@@ -4,6 +4,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.TicketDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
+import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,9 @@ import java.util.List;
 public class UserServiceImpl extends AbstractService<User> implements UserService {
 
     private TicketDao ticketDao;
+
+    @Autowired
+    private TicketService ticketService;
 
     @Autowired
     public UserServiceImpl(UserDao userDao, TicketDao ticketDao) {
@@ -34,9 +38,11 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     }
 
     @Override
-    public void matchTicket(User user, Ticket ticket) {
+    public void matchTicket(Integer matchUserId, Ticket ticket) {
 
+        List<User> matchedTicketUsers = ticket.getMachedUsers();
 
+        matchedTicketUsers.add(dao.findById(matchUserId));
 
     }
 }
