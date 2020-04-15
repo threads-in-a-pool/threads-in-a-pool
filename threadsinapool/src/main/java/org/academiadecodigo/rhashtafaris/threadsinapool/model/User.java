@@ -1,5 +1,6 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class User extends AbstractModel {
     private String password;
 
     @OneToMany(
-    cascade = {CascadeType.all},
+    cascade = {CascadeType.ALL},
     orphanRemoval = true,
     mappedBy = "users",
     fetch = FetchType.EAGER
