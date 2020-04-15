@@ -12,8 +12,6 @@ public interface CRUDService<T> {
 
     T getById(Integer id);
 
-    T getByName(String name);
-
     boolean exists(Integer Id);
     
 }

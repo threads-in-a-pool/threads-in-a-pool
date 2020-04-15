@@ -11,6 +11,8 @@ public interface UserService {
 
     void addTicket(Ticket ticket, User user);
 
+    User getByName(String name);
+
     void matchTicket(Integer userId,Ticket ticket);
 
 }

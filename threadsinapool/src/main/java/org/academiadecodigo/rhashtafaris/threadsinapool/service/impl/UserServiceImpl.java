@@ -17,6 +17,7 @@ import java.util.List;
 public class UserServiceImpl extends AbstractService<User> implements UserService {
 
     private TicketDao ticketDao;
+    private UserDao userDao;
 
     @Autowired
     private TicketService ticketService;
@@ -25,6 +26,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     public UserServiceImpl(UserDao userDao, TicketDao ticketDao) {
         super(userDao);
         this.ticketDao = ticketDao;
+        this.userDao = userDao;
     }
 
     @Transactional
@@ -38,6 +40,11 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     public void addTicket(Ticket ticket, User user) {
         ticket.setUserId(user.getId());
         ticketDao.saveOrUpdate(ticket);
+    }
+
+    @Override
+    public User getByName(String name) {
+        return userDao.findByUserName(name);
     }
 
     @Transactional

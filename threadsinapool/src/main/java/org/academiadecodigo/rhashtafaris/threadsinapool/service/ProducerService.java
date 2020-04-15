@@ -16,6 +16,8 @@ public interface ProducerService {
 
     boolean eventExists(Integer id);
 
+    Producer getByName(String name);
+
     void deleteEventFromProducer(Integer producerId, Integer eventId);
 
 }

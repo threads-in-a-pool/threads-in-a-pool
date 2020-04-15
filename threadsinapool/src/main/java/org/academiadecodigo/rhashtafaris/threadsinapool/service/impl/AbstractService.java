@@ -18,31 +18,26 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
 
     @Override
     public List<T> listAll() {
-        return null;
+        return dao.findAll();
     }
 
     @Override
     public void save(T model) {
-
+        dao.saveOrUpdate(model);
     }
 
     @Override
     public void delete(T model) {
-
+        dao.delete(model);
     }
 
     @Override
     public T getById(Integer id) {
-        return null;
-    }
-
-    @Override
-    public T getByName(String name) {
-        return null;
+        return dao.findById(id);
     }
 
     @Override
     public boolean exists(Integer Id) {
-        return false;
+
     }
 }
