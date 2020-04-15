@@ -35,7 +35,7 @@
     </context-param>
 
     <listener>
-        <listener-class>org.academiadecodigo.threadsinapool.Log4jWebConfig</listener-class>
+        <listener-class>org.academiadecodigo.rhashtafaris.threadsinapool.Log4jWebConfig</listener-class>
     </listener>
 
     <!--
