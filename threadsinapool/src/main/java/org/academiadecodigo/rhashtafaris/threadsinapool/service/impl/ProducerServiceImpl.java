@@ -5,9 +5,11 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.ProducerDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProducerServiceImpl extends AbstractService<Producer> implements ProducerService {
 
 
