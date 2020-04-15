@@ -5,10 +5,12 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.TicketDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class TicketServiceImpl extends AbstractService<Ticket> implements TicketService {
 
 
