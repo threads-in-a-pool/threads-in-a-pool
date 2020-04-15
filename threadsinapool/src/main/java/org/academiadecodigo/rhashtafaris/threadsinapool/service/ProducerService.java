@@ -18,5 +18,4 @@ public interface ProducerService {
 
     void deleteEventFromProducer(Integer producerId, Integer eventId);
 
-
 }
