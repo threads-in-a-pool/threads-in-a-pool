@@ -2,6 +2,8 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto;
 
 public class TicketDto {
 
+
+    private Integer id;
     private Integer userId;
     private Integer eventId;
 
@@ -19,5 +21,13 @@ public class TicketDto {
 
     public void setEventId(Integer eventId) {
         this.eventId = eventId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
