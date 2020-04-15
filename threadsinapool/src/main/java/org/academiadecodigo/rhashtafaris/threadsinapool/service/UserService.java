@@ -7,17 +7,5 @@ import java.util.List;
 
 public interface UserService {
 
-    User getUserById(Integer id);
-
-    User getUserByUsername(String username);
-
-    User save(User user);
-
-    boolean userExists(String username);
-
-    void deleteUser(Integer id);
-
-    List<User> listAllUsers();
-
     List<Ticket> listUserTickets(Integer id);
 }
