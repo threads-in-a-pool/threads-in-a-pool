@@ -12,6 +12,7 @@ import java.util.List;
 public class Event extends AbstractModel {
 
     private String name;
+    private String imageUrl;
     private Date date;
 
     @OneToMany(
@@ -46,5 +47,13 @@ public class Event extends AbstractModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -13,12 +13,21 @@ public interface ProducerService {
 
     List<Producer> listAllProducers();
 
+    List<Event>
+
     List<Event> listAllEventsFromProducer(Integer id);
 
-    Producer save(Producer producer);
+    Producer saveProducer(Producer producer);
+
+    Event saveEventOnProducer (Event event);
 
     boolean producerExists(String producerName);
 
+    boolean eventExists(Integer id);
+
     void deleteProducer(Integer id);
+
+    void deleteEventFromProducer(Integer producerId, Integer eventId);
+
 
 }
