@@ -7,17 +7,9 @@ import java.util.List;
 
 public interface ProducerService {
 
-<<<<<<< Updated upstream
-=======
-    Producer getProducerById(Integer id);
-
-    Producer getProducerByProducerName (String producerName);
-
-    List<Producer> listAllProducers();
 
     List<Event> listAllEvents();
 
->>>>>>> Stashed changes
     List<Event> listAllEventsFromProducer(Integer id);
 
     Event saveEventOnProducer (Event event);
