@@ -7,17 +7,19 @@ import javax.validation.constraints.Size;
 
 public class UserDto {
 
-    @NotNull
-    @NotBlank
-    @Size(min = 3, max = 65)
+    private Integer id;
+
+    @NotNull(message = "Name should have 3 or more characters.")
+    @NotBlank(message = "Name should have 3 or more characters.")
+    @Size(min = 3, max = 65, message = "Name should have 3 or more characters.")
     private String username;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 6, max = 64)
+    @NotNull(message = "Password should have at least 6 characters.")
+    @NotBlank(message = "Password should have at least 6 characters.")
+    @Size(min = 6, max = 64,message = "Password should have at least 6 characters.")
     private String password;
 
-    @Email
+    @Email(message = "E-mail should be valid.")
     private String email;
 
     public String getUsername() {
@@ -42,5 +44,13 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
