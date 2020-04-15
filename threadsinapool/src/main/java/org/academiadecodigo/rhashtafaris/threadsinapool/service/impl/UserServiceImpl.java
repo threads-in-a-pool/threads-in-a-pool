@@ -7,10 +7,13 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl extends AbstractService<User> implements UserService {
 
     private TicketDao ticketDao;
