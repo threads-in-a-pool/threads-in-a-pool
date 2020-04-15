@@ -4,15 +4,14 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "tickets")
 public class Ticket extends AbstractModel {
 
-    private Date eventDate;
     private Integer userId;
+    private Integer eventId;
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -23,14 +22,6 @@ public class Ticket extends AbstractModel {
     private List<User> machedUsers = new ArrayList<>();
 
     //getters and setters
-
-    public Date getEventDate() {
-        return eventDate;
-    }
-
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
 
     public List<User> getMachedUsers() {
         return machedUsers;
@@ -46,5 +37,13 @@ public class Ticket extends AbstractModel {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(Integer eventId) {
+        this.eventId = eventId;
     }
 }
