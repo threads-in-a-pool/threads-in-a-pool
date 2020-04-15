@@ -2,16 +2,24 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.model.impl;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tickets")
 public class Ticket extends AbstractModel {
 
     private Date eventDate;
-    private Event event;
+
+    @OneToMany(
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true,
+            mappedBy = "tickets",
+            fetch = FetchType.EAGER
+    )
+    private List<User> machedUsers = new ArrayList<>();
 
     //getters and setters
 
@@ -23,11 +31,11 @@ public class Ticket extends AbstractModel {
         this.eventDate = eventDate;
     }
 
-    public Event getEvent() {
-        return event;
+    public List<User> getMachedUsers() {
+        return machedUsers;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
+    public void setMachedUsers(List<User> machedUsers) {
+        this.machedUsers = machedUsers;
     }
 }
