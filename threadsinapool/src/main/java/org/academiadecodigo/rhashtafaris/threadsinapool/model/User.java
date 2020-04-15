@@ -1,10 +1,11 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name= "users")
-public class User implements Model {
+public class User extends AbstractModel {
 
     private String username;
     private String email;
@@ -18,14 +19,27 @@ public class User implements Model {
     )
     private List<Ticket> tickets = new ArrayList<>();
 
-
-    @Override
-    public Integer getId() {
-        return null;
+    public String getUsername() {
+        return username;
     }
 
-    @Override
-    public void setId() {
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
