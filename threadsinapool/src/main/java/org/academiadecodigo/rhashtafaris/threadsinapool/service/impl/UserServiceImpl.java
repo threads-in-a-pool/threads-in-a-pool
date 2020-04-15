@@ -40,6 +40,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
         ticketDao.saveOrUpdate(ticket);
     }
 
+    @Transactional
     @Override
     public void matchTicket(Integer matchUserId, Ticket ticket) {
 

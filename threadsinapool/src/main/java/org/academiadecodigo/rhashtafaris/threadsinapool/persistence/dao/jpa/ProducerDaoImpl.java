@@ -2,11 +2,13 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.jpa;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.ProducerDao;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+@Repository
 public class ProducerDaoImpl extends AbstractDao<Producer> implements ProducerDao {
 
     public ProducerDaoImpl() {
