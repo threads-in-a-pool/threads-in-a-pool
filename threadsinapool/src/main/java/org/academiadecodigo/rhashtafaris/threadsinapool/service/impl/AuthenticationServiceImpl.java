@@ -1,5 +1,7 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.service.impl;
 
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.ProducerDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.AuthenticationService;
@@ -25,11 +27,23 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public boolean authenticateUser(String username, String password) {
 
+        User user = userDao.findByUserName(username);
+
+        if (user == null){
+            return false;
+        }
+        return user.getPassword() == password;
     }
 
     @Override
     public boolean authenticateProducer(String producerName, String password) {
-        return false;
+
+        Producer producer = producerDao.findByUsername(producerName);
+
+        if (producer == null){
+            return false;
+        }
+        return producer.getPassword() == password;
     }
 
 }

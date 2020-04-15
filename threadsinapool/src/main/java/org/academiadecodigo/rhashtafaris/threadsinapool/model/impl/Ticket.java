@@ -12,6 +12,7 @@ import java.util.List;
 public class Ticket extends AbstractModel {
 
     private Date eventDate;
+    private Integer userId;
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -37,5 +38,13 @@ public class Ticket extends AbstractModel {
 
     public void setMachedUsers(List<User> machedUsers) {
         this.machedUsers = machedUsers;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
