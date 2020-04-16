@@ -8,10 +8,8 @@ import java.util.List;
 
 @Entity
 @Table(name= "producers")
-public class Producer extends AbstractModel {
+public class Producer extends LoginEntity{
 
-    private String producerName;
-    private String password;
     private String email;
 
     @OneToMany(
@@ -26,13 +24,6 @@ public class Producer extends AbstractModel {
 
     public Producer(){}
 
-    public String getProducerName() {
-        return producerName;
-    }
-
-    public void setProducerName(String producerName) {
-        this.producerName = producerName;
-    }
 
     public String getEmail() {
         return email;
@@ -40,14 +31,6 @@ public class Producer extends AbstractModel {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public List<Event> getEvents() {

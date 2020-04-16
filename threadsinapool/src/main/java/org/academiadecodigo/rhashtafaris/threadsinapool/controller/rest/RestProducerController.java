@@ -3,8 +3,6 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.controller.rest;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter.*;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.EventDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.ProducerDto;
-import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.TicketDto;
-import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.UserDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
