@@ -4,6 +4,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Event;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.EventDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.ProducerDao;
+import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +28,51 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
 
     @Transactional
     @Override
+    public Event getEventById(Integer id) throws NotFoundEx {
+        Event event = eventDao.findById(id);
+
+        if (event==null){
+            throw new NotFoundEx();
+        }
+        return event;
+    }
+
+
+
+    @Transactional
+    @Override
+    public Producer getById(Integer id) throws NotFoundEx {
+        Producer producer = producerDao.findById(id);
+
+        if (producer == null){
+            throw new NotFoundEx();
+        }
+
+        return producer;
+    }
+
+
+
+    @Transactional
+    @Override
+    public List<Producer> listProducers(){
+        return producerDao.findAll();
+    }
+
+    @Transactional
+    @Override
     public List<Event> listAllEvents() {
         return eventDao.findAll();
     }
 
     @Transactional
     @Override
-    public List<Event> listAllEventsFromProducer(Integer id) {
+    public List<Event> listAllEventsFromProducer(Integer id) throws NotFoundEx {
             Producer producer = dao.findById(id);
+
+            if (producer == null){
+                throw new NotFoundEx();
+            }
 
             return producer.getEvents();
     }
