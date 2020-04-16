@@ -13,6 +13,8 @@ public interface UserService {
 
     User getByName(String name);
 
+    User getById(Integer id);
+
     void matchTicket(Integer userId,Ticket ticket);
 
 }

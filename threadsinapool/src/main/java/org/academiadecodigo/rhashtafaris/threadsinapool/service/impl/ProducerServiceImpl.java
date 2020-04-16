@@ -7,6 +7,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.Producer
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,11 +25,13 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
 
     }
 
+    @Transactional
     @Override
     public List<Event> listAllEvents() {
         return eventDao.findAll();
     }
 
+    @Transactional
     @Override
     public List<Event> listAllEventsFromProducer(Integer id) {
             Producer producer = dao.findById(id);
@@ -36,21 +39,25 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
             return producer.getEvents();
     }
 
+    @Transactional
     @Override
     public Event saveEventOnProducer(Event event) {
         return eventDao.saveOrUpdate(event);
     }
 
+    @Transactional
     @Override
     public boolean eventExists(Integer id) {
         return false;
     }
 
+    @Transactional
     @Override
     public Producer getByName(String name) {
         return producerDao.findByUsername(name);
     }
 
+    @Transactional
     @Override
     public void deleteEventFromProducer(Integer producerId, Integer eventId) {
 

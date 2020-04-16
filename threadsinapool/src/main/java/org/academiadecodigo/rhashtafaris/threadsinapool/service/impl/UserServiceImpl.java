@@ -42,9 +42,16 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
         ticketDao.saveOrUpdate(ticket);
     }
 
+    @Transactional
     @Override
     public User getByName(String name) {
         return userDao.findByUserName(name);
+    }
+
+    @Transactional
+    @Override
+    public User getById(Integer id){
+        return userDao.findById(id);
     }
 
     @Transactional

@@ -1,8 +1,10 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.service.impl;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.Model;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.CRUDDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.CRUDService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,21 +18,25 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
         this.dao = dao;
     }
 
+    @Transactional
     @Override
     public List<T> listAll() {
         return dao.findAll();
     }
 
+    @Transactional
     @Override
     public void save(T model) {
         dao.saveOrUpdate(model);
     }
 
+    @Transactional
     @Override
     public void delete(T model) {
         dao.delete(model);
     }
 
+    @Transactional
     @Override
     public T getById(Integer id) {
         return dao.findById(id);
@@ -38,6 +44,6 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
 
     @Override
     public boolean exists(Integer Id) {
-
+        return false;
     }
 }
