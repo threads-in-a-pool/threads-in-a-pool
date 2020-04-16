@@ -12,7 +12,7 @@ public class ProducerDto {
     @NotNull(message = "Name should have 3 or more characters.")
     @NotBlank(message = "Name should have 3 or more characters.")
     @Size(min = 3, max = 65, message = "Name should have 3 or more characters.")
-    private String producerName;
+    private String username;
 
     @NotNull(message = "Password should have at least 6characters.")
     @NotBlank(message = "Password should have at least 6characters.")
@@ -21,14 +21,6 @@ public class ProducerDto {
 
     @Email(message = "E-mail should be valid.")
     private String email;
-
-    public String getProducerName() {
-        return producerName;
-    }
-
-    public void setProducerName(String producerName) {
-        this.producerName = producerName;
-    }
 
     public String getPassword() {
         return password;
@@ -52,5 +44,13 @@ public class ProducerDto {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

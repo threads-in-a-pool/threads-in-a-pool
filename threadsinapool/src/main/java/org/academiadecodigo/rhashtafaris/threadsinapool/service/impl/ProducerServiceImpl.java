@@ -53,6 +53,11 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
         return event;
     }
 
+    @Transactional
+    @Override
+    public Producer save(Producer producer){
+        return super.save(producer);
+    }
 
 
     @Transactional
@@ -66,7 +71,6 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
 
         return producer;
     }
-
 
 
     @Transactional
@@ -95,7 +99,8 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
 
     @Transactional
     @Override
-    public Event saveEventOnProducer(Event event) {
+    public Event saveEventOnProducer(Event event, Producer producer) {
+        event.setProducer(producer);
         return eventDao.saveOrUpdate(event);
     }
 

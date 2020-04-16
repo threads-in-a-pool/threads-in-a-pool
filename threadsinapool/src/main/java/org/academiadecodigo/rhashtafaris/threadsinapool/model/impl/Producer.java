@@ -1,7 +1,5 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.model.impl;
 
-import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
