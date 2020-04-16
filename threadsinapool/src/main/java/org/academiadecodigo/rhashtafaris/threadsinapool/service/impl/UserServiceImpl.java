@@ -4,7 +4,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.TicketDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
-import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.UserNotFoundEx;
+import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +38,18 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Transactional
     @Override
-    public void addTicket(Ticket ticket, User user) {
+    public Ticket addTicket(Ticket ticket, User user) {
         ticket.setUser(user);
-        ticketDao.saveOrUpdate(ticket);
+        return ticketDao.saveOrUpdate(ticket);
     }
 
     @Transactional
     @Override
-    public User getByName(String name) throws UserNotFoundEx {
+    public User getByName(String name) throws NotFoundEx {
         User user = userDao.findByUserName(name);
 
         if (user == null){
-            throw new UserNotFoundEx();
+            throw new NotFoundEx();
         }
 
         return user;
@@ -57,11 +57,11 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Transactional
     @Override
-    public User getById(Integer id) throws UserNotFoundEx {
+    public User getById(Integer id) throws NotFoundEx {
         User user = userDao.findById(id);
 
         if (user == null){
-            throw new UserNotFoundEx();
+            throw new NotFoundEx();
         }
 
         return user;
@@ -75,5 +75,12 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
         matchedTicketUsers.add(matchUserId);
 
+    }
+
+    @Transactional
+    @Override
+    public boolean userExists(Integer id) {
+        User user = userDao.findById(id);
+        return user != null;
     }
 }

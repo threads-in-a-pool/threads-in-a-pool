@@ -21,4 +21,14 @@ public class ExceptionHandlerController {
         model.setViewName("404");
         return model;
     }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView handleServerErrors(HttpServletRequest req, Exception ex) {
+
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("404");
+        return model;
+    }
 }
