@@ -32,7 +32,7 @@
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao"/>
+        <property name="packagesToScan" value="org.academiadecodigo.rhashtafaris.threadsinapool.model.impl"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
@@ -41,7 +41,7 @@
                 <entry key="hibernate.show_sql" value="${prod.debug}" />
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
                 <!-- Run as create once to initialize the schema -->
-                <!--<entry key="hibernate.hbm2ddl.auto" value="validate"/>-->
+                <entry key="hibernate.hbm2ddl.auto" value="create"/>
             </map>
         </property>
     </bean>

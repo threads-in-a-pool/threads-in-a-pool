@@ -4,8 +4,6 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.TicketDao;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public class TicketDaoImpl extends AbstractDao <Ticket> implements TicketDao {
 

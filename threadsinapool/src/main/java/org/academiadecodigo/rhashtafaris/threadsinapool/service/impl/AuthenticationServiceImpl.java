@@ -34,7 +34,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (user == null){
             return false;
         }
-        return user.getPassword() == password;
+        return user.getPassword().equals(password);
     }
 
     @Transactional
@@ -46,7 +46,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (producer == null){
             return false;
         }
-        return producer.getPassword() == password;
+        return producer.getPassword().equals(password);
     }
 
 }
