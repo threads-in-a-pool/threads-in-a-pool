@@ -2,6 +2,7 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.service.impl;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.CRUDDao;
+import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.CRUDService;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +26,8 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
 
     @Transactional
     @Override
-    public void save(T model) {
-        dao.saveOrUpdate(model);
+    public T save(T model) {
+       return dao.saveOrUpdate(model);
     }
 
     @Transactional
@@ -37,7 +38,7 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
 
     @Transactional
     @Override
-    public T getById(Integer id) {
+    public T getById(Integer id) throws NotFoundEx {
         return dao.findById(id);
     }
 
