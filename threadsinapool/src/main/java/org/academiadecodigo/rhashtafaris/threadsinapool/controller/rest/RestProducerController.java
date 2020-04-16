@@ -4,16 +4,19 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter.*;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.EventDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.ProducerDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.TicketDto;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Event;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -80,7 +83,48 @@ public class RestProducerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    
+
+
+    @PostMapping("")
+    public ResponseEntity<?> createProducer(
+            @Valid @RequestBody ProducerDto producerDto,
+            BindingResult bindingResult,
+            UriComponentsBuilder uriBuilder) {
+
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        Producer producer = producerService.save(producerDtoToProducer.convert(producerDto));
+        HttpHeaders header = new HttpHeaders();
+        header.setLocation(uriBuilder.path("/api/customer/" + producer.getId()).build().toUri());
+
+        return new ResponseEntity<>(header, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<?> createProducerEvent(
+            @PathVariable Integer id,
+            @Valid @RequestBody EventDto eventDto,
+            BindingResult bindingResult,
+            UriComponentsBuilder uriBuilder) {
+
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        try {
+            Event event = producerService.saveEventOnProducer(eventDtoToEvent.convert(eventDto),producerService.getById(id));
+
+        HttpHeaders header = new HttpHeaders();
+        header.setLocation(uriBuilder.path("/api/customer/" + event.getId()).build().toUri());
+
+        return new ResponseEntity<>(header, HttpStatus.CREATED);
+        } catch (NotFoundEx notFoundEx) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @Autowired
     public void setProducerDtoToProducer(ProducerDtoToProducer producerDtoToProducer) {
         this.producerDtoToProducer = producerDtoToProducer;

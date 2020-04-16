@@ -13,13 +13,15 @@ public interface ProducerService {
 
     Producer getById(Integer id) throws NotFoundEx;
 
+    Producer save(Producer producer);
+
     List<Producer> listProducers();
 
     List<Event> listAllEvents();
 
     List<Event> listAllEventsFromProducer(Integer id) throws NotFoundEx;
 
-    Event saveEventOnProducer (Event event);
+    Event saveEventOnProducer (Event event,Producer producer);
 
     Event getEventById(Integer id) throws NotFoundEx;
 
