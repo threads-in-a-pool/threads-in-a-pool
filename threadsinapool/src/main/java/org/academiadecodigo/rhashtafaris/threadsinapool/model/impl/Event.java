@@ -23,7 +23,7 @@ public class Event extends AbstractModel {
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
             mappedBy = "event",
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<Ticket> tickets = new ArrayList<>();
 

@@ -14,7 +14,7 @@ public class User extends LoginEntity {
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
             mappedBy = "user",
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<Ticket> userTickets = new ArrayList<>();
 

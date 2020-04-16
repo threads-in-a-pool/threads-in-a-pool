@@ -16,12 +16,6 @@ public class Ticket extends AbstractModel {
     @ManyToOne
     private User user;
 
-    /*@OneToMany(
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true,
-            mappedBy = "tickets",
-            fetch = FetchType.EAGER
-    )*/
     @ElementCollection
     private List<Integer> machedUserIds = new ArrayList<>();
 
