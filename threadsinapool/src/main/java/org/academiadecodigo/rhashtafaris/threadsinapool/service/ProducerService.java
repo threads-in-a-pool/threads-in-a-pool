@@ -2,12 +2,14 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.service;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Event;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 
 import java.util.List;
 
 public interface ProducerService {
 
+    public List<Ticket> getTicketsByEventId(Integer id) throws NotFoundEx;
 
     Producer getById(Integer id) throws NotFoundEx;
 
