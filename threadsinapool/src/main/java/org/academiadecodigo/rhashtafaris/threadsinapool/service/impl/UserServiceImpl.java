@@ -4,6 +4,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.TicketDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
+import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.UserNotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,14 +45,26 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Transactional
     @Override
-    public User getByName(String name) {
-        return userDao.findByUserName(name);
+    public User getByName(String name) throws UserNotFoundEx {
+        User user = userDao.findByUserName(name);
+
+        if (user == null){
+            throw new UserNotFoundEx();
+        }
+
+        return user;
     }
 
     @Transactional
     @Override
-    public User getById(Integer id){
-        return userDao.findById(id);
+    public User getById(Integer id) throws UserNotFoundEx {
+        User user = userDao.findById(id);
+
+        if (user == null){
+            throw new UserNotFoundEx();
+        }
+
+        return user;
     }
 
     @Transactional

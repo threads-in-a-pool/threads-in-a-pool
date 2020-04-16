@@ -1,5 +1,7 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.service;
 
+import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.UserNotFoundEx;
+
 import java.util.List;
 
 public interface CRUDService<T> {
@@ -10,7 +12,7 @@ public interface CRUDService<T> {
 
     void delete(T model);
 
-    T getById(Integer id);
+    T getById(Integer id) throws UserNotFoundEx;
 
     boolean exists(Integer Id);
     
