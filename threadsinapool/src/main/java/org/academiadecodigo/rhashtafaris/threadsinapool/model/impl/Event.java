@@ -15,6 +15,10 @@ public class Event extends AbstractModel {
     private String imageUrl;
     private Date date;
 
+    @ManyToOne
+    private Producer producer;
+
+
     @OneToMany(
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
@@ -55,5 +59,13 @@ public class Event extends AbstractModel {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 }

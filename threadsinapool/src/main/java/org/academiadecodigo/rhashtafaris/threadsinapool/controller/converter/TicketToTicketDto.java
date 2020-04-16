@@ -2,7 +2,9 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.TicketDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TicketToTicketDto extends AbstractConverter<Ticket, TicketDto> {
 
     @Override

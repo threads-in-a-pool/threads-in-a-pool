@@ -38,13 +38,20 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Transactional
     @Override
     public void addTicket(Ticket ticket, User user) {
-        ticket.setUserId(user.getId());
+        ticket.setUser(user);
         ticketDao.saveOrUpdate(ticket);
     }
 
+    @Transactional
     @Override
     public User getByName(String name) {
         return userDao.findByUserName(name);
+    }
+
+    @Transactional
+    @Override
+    public User getById(Integer id){
+        return userDao.findById(id);
     }
 
     @Transactional

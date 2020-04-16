@@ -7,6 +7,7 @@ import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.UserDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
@@ -24,6 +25,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         this.producerDao = producerDao;
     }
 
+    @Transactional
     @Override
     public boolean authenticateUser(String username, String password) {
 
@@ -32,9 +34,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (user == null){
             return false;
         }
-        return user.getPassword() == password;
+        return user.getPassword().equals(password);
     }
 
+    @Transactional
     @Override
     public boolean authenticateProducer(String producerName, String password) {
 
@@ -43,7 +46,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (producer == null){
             return false;
         }
-        return producer.getPassword() == password;
+        return producer.getPassword().equals(password);
     }
 
 }

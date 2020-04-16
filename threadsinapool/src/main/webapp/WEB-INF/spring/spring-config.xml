@@ -10,14 +10,14 @@
         <property name="locations" value="classpath:application.properties"/>
     </bean>
 
-    <!-- Use spring servlet for all requests, including static resources -->
     <mvc:default-servlet-handler/>
-
-    <!-- User @Controller, @Service annotations -->
     <mvc:annotation-driven/>
-
-    <!-- Base package to search for spring beans -->
     <context:component-scan base-package="org.academiadecodigo.rhashtafaris.threadsinapool"/>
+
+    <mvc:cors>
+        <mvc:mapping path="/**" />
+    </mvc:cors>
+
 
     <import resource="persistence.xml"/>
     <import resource="presentation.xml"/>

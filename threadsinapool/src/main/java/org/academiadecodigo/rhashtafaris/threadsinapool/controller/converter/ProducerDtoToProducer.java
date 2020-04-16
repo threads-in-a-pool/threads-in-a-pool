@@ -2,7 +2,9 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.ProducerDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProducerDtoToProducer extends AbstractConverter<ProducerDto, Producer> {
 
     @Override
