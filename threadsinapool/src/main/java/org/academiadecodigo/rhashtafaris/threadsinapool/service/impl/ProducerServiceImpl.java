@@ -2,6 +2,7 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.service.impl;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Event;
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Producer;
+import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Ticket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.EventDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.ProducerDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
@@ -25,6 +26,21 @@ public class ProducerServiceImpl extends AbstractService<Producer> implements Pr
         this.eventDao = eventDao;
 
     }
+
+    @Transactional
+    @Override
+    public List<Ticket> getTicketsByEventId(Integer id) throws NotFoundEx {
+
+        Event event= eventDao.findById(id);
+
+        if (event == null){
+            throw new NotFoundEx();
+        }
+
+        return event.getTickets();
+    }
+
+
 
     @Transactional
     @Override

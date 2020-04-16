@@ -3,6 +3,7 @@ package org.academiadecodigo.rhashtafaris.threadsinapool.controller.rest;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter.*;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.EventDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.ProducerDto;
+import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.TicketDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class RestProducerController {
     private ProducerDtoToProducer producerDtoToProducer;
     private EventDtoToEvent eventDtoToEvent;
     private EventToEventDto eventToEventDto;
+    private TicketToTicketDto ticketToTicketDto;
 
 
     @GetMapping("/list")
@@ -68,9 +70,17 @@ public class RestProducerController {
         }
     }
 
-
-
-
+    @GetMapping("/event/{id}/list")
+    public ResponseEntity<?> getTicketsByEventId (@PathVariable Integer id){
+        try {
+            return new ResponseEntity<List<TicketDto>>(
+                    ticketToTicketDto.convert(producerService.getTicketsByEventId(id))
+                    ,HttpStatus.OK);
+        } catch (NotFoundEx notFoundEx) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    
     @Autowired
     public void setProducerDtoToProducer(ProducerDtoToProducer producerDtoToProducer) {
         this.producerDtoToProducer = producerDtoToProducer;
@@ -94,5 +104,10 @@ public class RestProducerController {
     @Autowired
     public void setEventToEventDto(EventToEventDto eventToEventDto) {
         this.eventToEventDto = eventToEventDto;
+    }
+
+    @Autowired
+    public void setTicketToTicketDto(TicketToTicketDto ticketToTicketDto) {
+        this.ticketToTicketDto = ticketToTicketDto;
     }
 }
