@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class HtmlController {
 
+    @Autowired
     private UserToUserDto userToUserDto;
+    @Autowired
     private UserService userService;
 
     @GetMapping({"" ,"/"})
@@ -41,15 +43,5 @@ public class HtmlController {
         UserDto userDto = userToUserDto.convert(userService.getById(id));
         model.addAttribute("user",userDto);
         return "profile";
-    }
-
-    @Autowired
-    public void setUserToUserDto(UserToUserDto userToUserDto) {
-        this.userToUserDto = userToUserDto;
-    }
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
     }
 }

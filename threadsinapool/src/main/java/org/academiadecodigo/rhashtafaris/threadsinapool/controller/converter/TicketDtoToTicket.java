@@ -13,8 +13,8 @@ public class TicketDtoToTicket extends AbstractConverter<TicketDto, Ticket> {
         Ticket ticket = new Ticket();
 
         ticket.setId(ticketDto.getId());
-        ticket.setUserId(ticketDto.getUserId());
-        ticket.setEventId(ticketDto.getEventId());
+        ticket.setUser(ticketDto.getUser());
+        ticket.setEvent(ticketDto.getEvent());
 
         return ticket;
     }

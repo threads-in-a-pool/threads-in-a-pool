@@ -1,7 +1,6 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.service.impl;
 
 import org.academiadecodigo.rhashtafaris.threadsinapool.model.AbstractModel;
-import org.academiadecodigo.rhashtafaris.threadsinapool.model.Model;
 import org.academiadecodigo.rhashtafaris.threadsinapool.persistence.dao.CRUDDao;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.CRUDService;
 import org.springframework.transaction.annotation.Transactional;

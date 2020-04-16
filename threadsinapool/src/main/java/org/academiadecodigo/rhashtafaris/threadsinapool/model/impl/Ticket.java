@@ -10,8 +10,11 @@ import java.util.List;
 @Table(name = "tickets")
 public class Ticket extends AbstractModel {
 
-    private Integer userId;
-    private Integer eventId;
+    @ManyToOne
+    private Event event;
+
+    @ManyToOne
+    private User user;
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -31,19 +34,19 @@ public class Ticket extends AbstractModel {
         this.machedUsers = machedUsers;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    public Integer getEventId() {
-        return eventId;
+    public User getUser() {
+        return user;
     }
 
-    public void setEventId(Integer eventId) {
-        this.eventId = eventId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

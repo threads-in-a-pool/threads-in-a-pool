@@ -4,6 +4,9 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
+/**
+ * An {@link ApplicationListener} implementation that is notified on each {@link ContextRefreshedEvent}
+ */
 public class SpringBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     /**
@@ -11,7 +14,6 @@ public class SpringBootstrap implements ApplicationListener<ContextRefreshedEven
      *
      * @see ApplicationListener#onApplicationEvent(ApplicationEvent)
      */
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
@@ -22,5 +24,4 @@ public class SpringBootstrap implements ApplicationListener<ContextRefreshedEven
             System.out.println("=> " + profile);
         }
     }
-
 }
