@@ -16,16 +16,19 @@ public class Ticket extends AbstractModel {
     @ManyToOne
     private User user;
 
-    @OneToMany(
+    /*@OneToMany(
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
             mappedBy = "tickets",
             fetch = FetchType.EAGER
-    )
-    private List<User> machedUsers = new ArrayList<>();
+    )*/
+    @ElementCollection
+    private List<Integer> machedUserIds = new ArrayList<>();
 
     //getters and setters
 
+    public Ticket(){}
+/*
     public List<User> getMachedUsers() {
         return machedUsers;
     }
@@ -33,7 +36,7 @@ public class Ticket extends AbstractModel {
     public void setMachedUsers(List<User> machedUsers) {
         this.machedUsers = machedUsers;
     }
-
+*/
     public Event getEvent() {
         return event;
     }
@@ -48,5 +51,13 @@ public class Ticket extends AbstractModel {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Integer> getMachedUserIds() {
+        return machedUserIds;
+    }
+
+    public void setMachedUserIds(List<Integer> machedUserIds) {
+        this.machedUserIds = machedUserIds;
     }
 }

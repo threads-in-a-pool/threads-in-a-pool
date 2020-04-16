@@ -22,12 +22,14 @@ public class Event extends AbstractModel {
     @OneToMany(
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
-            mappedBy = "events",
-            fetch = FetchType.EAGER
+            mappedBy = "event",
+            fetch = FetchType.LAZY
     )
     private List<Ticket> tickets = new ArrayList<>();
 
     //getters and setters
+
+    public Event (){}
 
     public List<Ticket> getTickets() {
         return tickets;
