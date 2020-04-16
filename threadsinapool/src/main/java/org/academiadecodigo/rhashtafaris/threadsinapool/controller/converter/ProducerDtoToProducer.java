@@ -13,7 +13,7 @@ public class ProducerDtoToProducer extends AbstractConverter<ProducerDto, Produc
         Producer producer = new Producer();
 
         producer.setId(producerDto.getId());
-        producer.setProducerName(producerDto.getProducerName());
+        producer.setUsername(producerDto.getUsername());
         producer.setEmail(producerDto.getEmail());
         producer.setPassword(producerDto.getPassword());
 
