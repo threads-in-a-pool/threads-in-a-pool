@@ -21,10 +21,10 @@ public class TicketServiceImpl extends AbstractService<Ticket> implements Ticket
 
     @Transactional
     @Override
-    public List<User> getTicketMatchUsersListByTicketId(Integer ticketId) {
+    public List<Integer> getTicketMatchUsersListByTicketId(Integer ticketId) {
 
         Ticket ticket = dao.findById(ticketId);
 
-        return ticket.getMachedUsers();
+        return ticket.getMachedUserIds();
     }
 }

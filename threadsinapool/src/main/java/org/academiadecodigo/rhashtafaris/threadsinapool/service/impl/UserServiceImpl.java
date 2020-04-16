@@ -58,9 +58,9 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Override
     public void matchTicket(Integer matchUserId, Ticket ticket) {
 
-        List<User> matchedTicketUsers = ticket.getMachedUsers();
+        List<Integer> matchedTicketUsers = ticket.getMachedUserIds();
 
-        matchedTicketUsers.add(dao.findById(matchUserId));
+        matchedTicketUsers.add(matchUserId);
 
     }
 }

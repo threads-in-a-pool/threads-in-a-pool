@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TicketService extends CRUDService<Ticket> {
 
-    List<User> getTicketMatchUsersListByTicketId(Integer ticketId);
+    List<Integer> getTicketMatchUsersListByTicketId(Integer ticketId);
 }

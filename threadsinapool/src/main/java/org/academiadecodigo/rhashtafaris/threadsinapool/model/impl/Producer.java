@@ -17,12 +17,14 @@ public class Producer extends AbstractModel {
     @OneToMany(
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
-            mappedBy = "producers",
-            fetch = FetchType.EAGER
+            mappedBy = "producer",
+            fetch = FetchType.LAZY
     )
     private List<Event> events = new ArrayList<>();
 
     //getters and setters
+
+    public Producer(){}
 
     public String getProducerName() {
         return producerName;
