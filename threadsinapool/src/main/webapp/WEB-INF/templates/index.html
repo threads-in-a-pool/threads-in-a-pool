@@ -16,7 +16,10 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="/threadsinapool/templates/static/stylepage.css">
+
     <script type="text/javascript" src="/threadsinapool/templates/static/principal.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <link rel='stylesheet' href='js-form-validation.css' type='text/css' />
     <script src="sample-registration-form-validation.js"></script>
@@ -109,17 +112,17 @@
     </div>
 </div>
 
-<div class='container'>
-    <img id="1" class="im" src=""
-         alt='' />
-    <img id="2" class="im" src=""
-         alt='' />
-    <img id="3" class="im" src=""
-         alt='' />
-    <img id="4" class="im" src=""
-         alt='' />
-    <img id="5" class="im" src=""
-         alt='' class="responsive"/>
+<div class='container im'>
+    <a href="/threadsinapool/tickets"><img id="1" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwfcA4e5nQxQQNlBeTueuhYymmN30/UXBNBN8GSQG9SakETa//g0/UKcUHwGqaMYCo&Q=85&crop=center&errorpic=transparent&W=600"
+            alt='' /></a>
+    <a href="/threadsinapool/tickets"><img id="2" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwqyYISL2ooSiYLeH96mfe2XxvhzbkVIE5dSKJ1linFblc6sOLcSLYrosxim4tUN1n&Q=85&crop=center&errorpic=transparent&W=600"
+         alt='' /></a>
+    <a href="/threadsinapool/tickets"><img id="3" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+uhYT1qq++ke6axw82Gosxml+cTitjOGBOE4+SPzV+0azaS9LJUrz55gkgMKVFu2z&Q=85&crop=center&errorpic=transparent&W=600"
+            alt='' /></a>
+    <a href="threadsinapool/tickets"><img id="4" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+X13GbOQTnz6S7MggeU7yYO0GjcabRXfoEOf8NQOrBG6xKlj5Mcv3Ae06BMBkN7+g&Q=85&crop=center&errorpic=transparent&W=600"
+            alt='' /></a>
+    <a href="/threadsinapool/tickets"><img id="5" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+2sNczewaNx6Al8sIrNL/GiTOtQWsfhEyTsBwrM5JNe5but/ui/2+Nej4vrJt1Tme&Q=85&crop=center&errorpic=transparent&W=600"
+            alt='' class="responsive"/></a>
 
 </div>
 
@@ -127,10 +130,11 @@
 
 <script>
     $(document).ready(function () {
-        $(".container").dblclick(function (event) {
+        $(".container").onclick(function (event) {
             alert("The paragraph was double-clicked.");
             var id = event.target.id;
             localStorage.setItem("eventId", id);
+            console.log(localStorage.getItem("eventId"));
 
         });
     });
