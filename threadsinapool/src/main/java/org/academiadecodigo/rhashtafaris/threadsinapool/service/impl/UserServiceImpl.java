@@ -69,11 +69,19 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Transactional
     @Override
-    public void matchTicket(Integer matchUserId, Ticket ticket) {
+    public void matchTicket(Integer matchUserId, Ticket ticket) throws NotFoundEx {
+
+        User user = userDao.findById(matchUserId);
+
+        if (user == null || ticket == null){
+            throw new NotFoundEx();
+        }
 
         List<Integer> matchedTicketUsers = ticket.getMachedUserIds();
 
         matchedTicketUsers.add(matchUserId);
+
+        ticketDao.saveOrUpdate(ticket);
 
     }
 

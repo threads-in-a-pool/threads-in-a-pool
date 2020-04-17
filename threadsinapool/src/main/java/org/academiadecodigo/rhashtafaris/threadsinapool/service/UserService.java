@@ -18,6 +18,6 @@ public interface UserService extends CRUDService<User>{
 
     User getById(Integer id) throws NotFoundEx;
 
-    void matchTicket(Integer userId,Ticket ticket);
+    void matchTicket(Integer userId,Ticket ticket) throws NotFoundEx;
 
 }
