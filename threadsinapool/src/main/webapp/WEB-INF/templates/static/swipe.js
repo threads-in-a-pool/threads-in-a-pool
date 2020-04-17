@@ -95,7 +95,7 @@ $(document).ready(function() {
 
     function setEvent(eventId){
         $.ajax({
-            url: 'http://localhost:8080/threadsinapool/api/producer/event/'+ eventId,
+            url: 'http://localhost:8080/threadsinapool/api/user/' + eventId + '/tickets',
             async: true,
             success: successCallback, 
             error: function(error) {
