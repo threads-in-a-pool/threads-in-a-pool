@@ -47,8 +47,7 @@ $(document).ready(function() {
 
       } else if (pullDeltaX <= -decisionVal) {
         $card.addClass("to-left");
-                //setEvent(localStorage.getItem("eventId"))
-                setEvent(1);
+                setEvent(localStorage.getItem("eventId"));
                 $('#currentEventImg').attr("src", eventImage)
                 $('#currentEventName').text(eventName);
                 
@@ -129,8 +128,7 @@ $(document).ready(function() {
     $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
         
         $.ajax({
-            /*url: 'http://localhost:8080/threadsinapool/api/producer/event/' + localStorage.getItem("eventId") + '/list',*/
-            url: 'http://localhost:8080/threadsinapool/api/producer/event/1/list',
+            url: 'http://localhost:8080/threadsinapool/api/producer/event/' + localStorage.getItem("eventId") + '/list',
             async: true,
             success: successCallback, 
             error: function(error) {
