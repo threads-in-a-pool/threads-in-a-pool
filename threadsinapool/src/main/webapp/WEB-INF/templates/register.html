@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="/threadsinapool/templates/static/stylepage.css">
     <script type="text/javascript" src="/threadsinapool/templates/static/principal.js"></script>
 
-    <link rel='stylesheet' href='js-form-validation.css' type='text/css' />
-    <script src="sample-registration-form-validation.js"></script>
-
     <title>App</title>
 </head>
 
@@ -53,18 +50,17 @@
                                                         Twitter</a>
                                                 </div>
                                                 or
-                                                <form class="form" role="form" method="post" action="/login"
-                                                      accept-charset="UTF-8" id="login-nav">
+                                                <form class="form" role="form" method="post" action="/login" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputEmail2">Email
                                                             address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2"
-                                                               placeholder="Email address" required>
+                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address"
+                                                               required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2"
-                                                               placeholder="Password" required>
+                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"
+                                                               required>
                                                         <div class="help-block text-right"><a href="" style="color: black;">Forget
                                                             the password ?</a>
                                                         </div>
@@ -93,7 +89,7 @@
                         <a class="nav-link" href="#">Tickets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/threadsinapool/about">About Us</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">SignOut</a>
@@ -104,36 +100,29 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Find an event" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
+
             </div>
         </nav>
     </div>
 </div>
 
-<div class='container'>
-    <img id="1" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwfcA4e5nQxQQNlBeTueuhYymmN30/UXBNBN8GSQG9SakETa//g0/UKcUHwGqaMYCo&Q=85&crop=center&errorpic=transparent&W=600"
-         alt='' />
-    <img id="2" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwqyYISL2ooSiYLeH96mfe2XxvhzbkVIE5dSKJ1linFblc6sOLcSLYrosxim4tUN1n&Q=85&crop=center&errorpic=transparent&W=600"
-         alt='' />
-    <img id="3" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+uhYT1qq++ke6axw82Gosxml+cTitjOGBOE4+SPzV+0azaS9LJUrz55gkgMKVFu2z&Q=85&crop=center&errorpic=transparent&W=600"
-         alt='' />
-    <img id="4" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+X13GbOQTnz6S7MggeU7yYO0GjcabRXfoEOf8NQOrBG6xKlj5Mcv3Ae06BMBkN7+g&Q=85&crop=center&errorpic=transparent&W=600"
-         alt='' />
-    <img id="5" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+2sNczewaNx6Al8sIrNL/GiTOtQWsfhEyTsBwrM5JNe5but/ui/2+Nej4vrJt1Tme&Q=85&crop=center&errorpic=transparent&W=600"
-         alt='' class="responsive"/>
 
+<div id="form" onload="document.registration.userid.focus();">
+    <form name='registration' onSubmit="return formValidation();">
+
+        <ul class="container-fluid">
+            <h1>SignUp </h1>
+            <p id="pe"> Go vegan! Go catch ball! Go Porto! Go Threads in a pool! Go Jesus! Go Satan!</p> <br>
+            <label for="username">Name:</label><br>
+            <input type="text" name="username" size="50" /><br><br>
+            <label for="passid">Password:</label><br>
+            <input type="password" name="passid" size="12" /><br><br>
+            <label for="email">Email:</label><br>
+            <input type="text" name="email" size="50" /><br><br>
+            <input type="submit" name="submit" value="Submit" /><br>
+        </ul>
+    </form>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $(".container").dblclick(function () {
-            alert("The paragraph was double-clicked.");
-
-        });
-    });
-</script>
-
 </body>
 
 </html>

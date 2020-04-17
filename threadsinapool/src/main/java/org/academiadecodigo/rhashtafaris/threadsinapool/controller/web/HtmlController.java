@@ -33,9 +33,9 @@ public class HtmlController {
         return "login";
     }
 
-    @GetMapping("/signup")
+    @GetMapping("/register")
     public String signUp() {
-        return "signup";
+        return "register";
     }
 
     @GetMapping("/profile/{id}")

@@ -1,69 +1,69 @@
 * {
     margin: 0;
-   }
+}
 
 html {
     position: relative;
     height: 100%;
-  }
- 
-  body {
-    background-image: url('img/homepage.jpeg');
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1563841930606-67e2bce48b78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80');
     background-position: center;
-   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   color:#000;
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   overflow-x: hidden;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .navbar {
     background-color: #333;
     position: fixed;
-    top: 0; 
+    top: 0;
     width: 100%;
     z-index: 9;
-  }
-  
-  /* Links inside the navbar */
-  .navbar a {
+}
+
+/* Links inside the navbar */
+.navbar a {
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  
-  }
-  
-  /* Change background on mouse-over */
-  .navbar a:hover {
+
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
     background: rgba(221, 221, 221, 0);
     color: black;
-  }
-  
-  /* Main content */
-  .main {
-    margin-top: 30px; 
-  }
+}
 
-  /**/
-  ::-webkit-scrollbar{display: none;}
-  .container {
+/* Main content */
+.main {
+    margin-top: 30px;
+}
+
+/**/
+::-webkit-scrollbar{display: none;}
+.container {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     width: 100%;
     margin-top: 4rem;
-	
+
 }
 
 .container img {
     flex: 0 0 auto;
     width: 100%;
-    
+
 }
 
 .im {
@@ -80,10 +80,10 @@ html {
     min-width: 250px;
     padding: 14px 14px 0;
     background-color:rgba(255,255,255,.8);
-    
+
 }
 #login-dp .help-block{
-    font-size:12px    
+    font-size:12px
 }
 #login-dp .bottom{
     background-color:rgba(255,255,255,.8);
@@ -92,7 +92,7 @@ html {
     padding:14px;
 }
 #login-dp .social-buttons{
-    margin:12px 0    
+    margin:12px 0
 }
 #login-dp .social-buttons a{
     width: 49%;
@@ -106,7 +106,7 @@ html {
 }
 .btn-fb:hover{
     color: #fff;
-    background-color:#496ebc 
+    background-color:#496ebc
 }
 .btn-tw{
     color: #fff;
