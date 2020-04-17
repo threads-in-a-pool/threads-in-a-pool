@@ -1,0 +1,113 @@
+.wrapper {
+    position: fixed;
+    height: 22vw;
+    width: 22vw;
+    overflow: hidden;
+    border-radius: 50%;
+    bottom: 5rem;
+    left: 5rem
+  }
+  
+.image--cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    color: darkcyan;
+}
+
+body {
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+.bigimg-1 {
+    background-image: url(c://Users/Rmorcela/Pictures/ultra-australia-win-double-pass-oz-edm-2019\ \(1\).jpg);
+    min-height: 100%;
+    position: relative;
+    opacity: 0.75;
+    background-position: center;
+    background-size: cover;
+}
+
+.ticketCaption {
+    position: absolute;
+    left: 0%;
+    top: 20%;
+    width: 100%;
+    color: #000;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+span.border {
+    color:greenyellow;
+    padding: 18px;
+    padding-left: 10%;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+.flex-rectangle{
+    width: 100%;
+    background: #111;
+    opacity: 0.85;
+}
+.flex-rectangle:before{
+    content: "";
+    display: block;
+    padding-top: 2%;
+}
+.flex-rectangle::after{
+    content: "";
+    display: block;
+    padding-bottom: 2%;
+}
+
+.profileCaption {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-align: right;
+}
+
+span.profileTitle {
+    color: #fff;
+    letter-spacing: 10px;
+    padding-right: 7%;
+    padding-left: 7%;
+    font-size: 10vw;
+}
+
+.profileSmallCaption {
+    color: palegreen;
+    letter-spacing: 10px;
+    padding-right: 7%;
+    padding-left: 7%;
+    font-size: 5vw;
+    margin: 0em;
+}
+
+.swipeCaption {
+    position: absolute;
+    top: 85%;
+    right: 25%;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: greenyellow ;
+    letter-spacing: 10px;
+    font-size: 2vw;
+}
+
+.userForm {
+    position: relative;
+    top: 10%;
+    padding-left: 45%;
+}
+
+#form .dropdown-menu {
+    min-width: 20rem;
+}
