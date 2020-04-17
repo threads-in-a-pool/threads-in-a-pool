@@ -28,9 +28,9 @@ public class HtmlController {
         return "about";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/tickets")
     public String login() {
-        return "login";
+        return "tickets";
     }
 
     @GetMapping("/register")
