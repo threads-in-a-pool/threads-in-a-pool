@@ -8,8 +8,8 @@ public class TicketDto {
 
 
     private Integer id;
-    private User user;
-    private Event event;
+    private Integer user_id;
+    private Integer event_id;
 
     public Integer getId() {
         return id;
@@ -19,19 +19,19 @@ public class TicketDto {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return user_id;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(int user) {
+        this.user_id = user;
     }
 
-    public Event getEvent() {
-        return event;
+    public int getEvent() {
+        return event_id;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
+    public void setEvent(int event) {
+        this.event_id = event;
     }
 }
