@@ -14,7 +14,7 @@ public class Producer extends LoginEntity{
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
             mappedBy = "producer",
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<Event> events = new ArrayList<>();
 

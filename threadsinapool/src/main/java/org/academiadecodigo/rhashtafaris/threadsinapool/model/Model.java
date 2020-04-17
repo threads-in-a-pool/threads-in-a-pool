@@ -1,6 +1,8 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.model;
 
-public interface Model {
+import java.io.Serializable;
+
+public interface Model extends Serializable {
 
     Integer getId();
     void setId(Integer id);
