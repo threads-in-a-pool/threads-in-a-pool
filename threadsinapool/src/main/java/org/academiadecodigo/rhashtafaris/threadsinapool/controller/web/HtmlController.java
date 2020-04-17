@@ -35,7 +35,7 @@ public class HtmlController {
             return "404";
         }
         
-        return "swipeevent" + id;
+        return "swipeEvent" + id;
     }
 
     @GetMapping("/register")
