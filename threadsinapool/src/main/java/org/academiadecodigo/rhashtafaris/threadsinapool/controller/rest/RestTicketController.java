@@ -1,16 +1,16 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.controller.rest;
 
+import org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter.TicketDtoToTicket;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.converter.TicketToTicketDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.TicketDto;
+import org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto.UserDto;
 import org.academiadecodigo.rhashtafaris.threadsinapool.serverExceptions.NotFoundEx;
 import org.academiadecodigo.rhashtafaris.threadsinapool.service.TicketService;
+import org.academiadecodigo.rhashtafaris.threadsinapool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +19,9 @@ import java.util.List;
 public class RestTicketController {
 
     private TicketToTicketDto ticketToTicketDto;
+    private TicketDtoToTicket ticketDtoToTicket;
     private TicketService ticketService;
+    private UserService userService;
 
     @GetMapping("/list")
     public ResponseEntity<List<TicketDto>> listTickets(){
@@ -35,6 +37,42 @@ public class RestTicketController {
         }
     }
 
+    @PutMapping("/trade")
+    public ResponseEntity<?> tradeTickets(@RequestBody TicketDto ticket1, @RequestBody TicketDto ticket2){
+
+        try {
+            ticketService.ticketTrade(ticketDtoToTicket.convert(ticket1),ticketDtoToTicket.convert(ticket2));
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NotFoundEx notFoundEx) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/match")
+    public ResponseEntity<?> tradeTickets(@RequestBody UserDto userDto, @RequestBody TicketDto ticketDto){
+
+        try {
+            userService.matchTicket(userDto.getId(),ticketDtoToTicket.convert(ticketDto));
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NotFoundEx notFoundEx) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCustomer(@PathVariable Integer id) {
+
+        try {
+            ticketService.delete(ticketService.getById(id));
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (NotFoundEx notFoundEx) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
     @Autowired
     public void setTicketService(TicketService ticketService) {
         this.ticketService = ticketService;
@@ -43,5 +81,15 @@ public class RestTicketController {
     @Autowired
     public void setTicketToTicketDto(TicketToTicketDto ticketToTicketDto) {
         this.ticketToTicketDto = ticketToTicketDto;
+    }
+
+    @Autowired
+    public void setTicketDtoToTicket(TicketDtoToTicket ticketDtoToTicket) {
+        this.ticketDtoToTicket = ticketDtoToTicket;
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }
