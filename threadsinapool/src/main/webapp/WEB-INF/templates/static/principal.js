@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     var events;
@@ -10,16 +9,20 @@ $(document).ready(function () {
         alert('clicked');
     });
 
+/*
     $.ajax({
-        url: 'http://localhost:8080/threadsinapool/api/producer/event/list',
+        url: 'http://localhost:8080/threadsinapoll/api/producer/event/list',
         async: true,
         success: successCallback,
-        error: function(error) {
-            console.log(error);
-        }
+
+        error: errorCallback
     });
 
-    function successCallback(response){
+    function errorCallback(request, status, error) {
+        console.log(error);
+    }
+
+    function successCallback(response) {
         events = response;
     };
 
@@ -33,4 +36,5 @@ $(document).ready(function () {
     }
 
     populateCarosel(events);
+*/
 });

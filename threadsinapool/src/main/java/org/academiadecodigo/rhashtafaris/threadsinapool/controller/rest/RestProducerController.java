@@ -84,6 +84,11 @@ public class RestProducerController {
         }
     }
 
+    @GetMapping("/event/list")
+    public ResponseEntity<List<EventDto>> getEvents(){
+        return new ResponseEntity<List<EventDto>>(eventToEventDto.convert(producerService.listAllEvents()),HttpStatus.OK);
+    }
+
 
     @PostMapping("")
     public ResponseEntity<?> createProducer(
