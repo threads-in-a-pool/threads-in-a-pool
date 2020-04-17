@@ -1,8 +1,5 @@
 package org.academiadecodigo.rhashtafaris.threadsinapool.controller.dto;
 
-import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.Event;
-import org.academiadecodigo.rhashtafaris.threadsinapool.model.impl.User;
-
 
 public class TicketDto {
 

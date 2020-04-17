@@ -22,15 +22,7 @@ public class Ticket extends AbstractModel {
     //getters and setters
 
     public Ticket(){}
-/*
-    public List<User> getMachedUsers() {
-        return machedUsers;
-    }
 
-    public void setMachedUsers(List<User> machedUsers) {
-        this.machedUsers = machedUsers;
-    }
-*/
     public Event getEvent() {
         return event;
     }

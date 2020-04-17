@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProducerService {
 
-    public List<Ticket> getTicketsByEventId(Integer id) throws NotFoundEx;
+    List<Ticket> getTicketsByEventId(Integer id) throws NotFoundEx;
 
     Producer getById(Integer id) throws NotFoundEx;
 
