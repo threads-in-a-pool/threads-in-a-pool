@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -155,16 +156,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <---------------------------------- >
 
+
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="stylepage.css">
+    <script type="text/javascript" src="script.js"></script>
+
     <link rel="stylesheet" href="/threadsinapool/templates/static/stylepage.css">
 
     <script type="text/javascript" src="/threadsinapool/templates/static/principal.js"></script>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
     <link rel='stylesheet' href='js-form-validation.css' type='text/css' />
-
+    <script src="sample-registration-form-validation.js"></script>
 
     <title>App</title>
 </head>
@@ -185,8 +194,7 @@
                     <li class="nav-item active">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span
-                                        class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
                                     <li>
                                         <div class="row">
@@ -199,7 +207,7 @@
                                                         Twitter</a>
                                                 </div>
                                                 or
-                                                <form class="form" role="form" method="post" action="/login"
+                                                <form class="form" role="form" method="post" action="login"
                                                       accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputEmail2">Email
@@ -208,20 +216,16 @@
                                                                placeholder="Email address" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="sr-only"
-                                                               for="exampleInputPassword2">Password</label>
-                                                        <input type="password" class="form-control"
-                                                               id="exampleInputPassword2"
+                                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword2"
                                                                placeholder="Password" required>
-                                                        <div class="help-block text-right"><a href=""
-                                                                                              style="color: black;">Forget
+                                                        <div class="help-block text-right"><a href="" style="color: black;">Forget
                                                             the password ?</a>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit" class="btn btn-primary btn-block">Sign
-                                                            in
-                                                        </button>
+                                                            in</button>
                                                     </div>
                                                     <div class="checkbox">
                                                         <label>
@@ -231,7 +235,7 @@
                                                 </form>
                                             </div>
                                             <div class="btn btn-primary text-center">
-                                                <a href="/threadsinapool/register" style="color: black;"><b>Join Us</b></a>
+                                                <a href="#" style="color: black;"><b>Join Us</b></a>
                                             </div>
                                         </div>
                                     </li>
@@ -240,7 +244,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tickets</a>
+                        <a class="nav-link" href="/threadsinapool/tickets/1">Tickets</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/threadsinapool/about">About Us</a>
@@ -258,30 +262,25 @@
         </nav>
     </div>
 </div>
-
-
 <div class='container'>
-    <img id="1" class="im" src='https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+2sNczewaNx6Al8sIrNL/GiTOtQWsfhEyTsBwrM5JNe5but/ui/2+Nej4vrJt1Tme&Q=85&crop=center&errorpic=transparent&W=600'
-         alt=''/>
-    <img id="2" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+X13GbOQTnz6S7MggeU7yYO0GjcabRXfoEOf8NQOrBG6xKlj5Mcv3Ae06BMBkN7+g&Q=85&crop=center&errorpic=transparent&W=600"
-         alt=''/>
-    <img id="3" class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+uhYT1qq++ke6axw82Gosxml+cTitjOGBOE4+SPzV+0azaS9LJUrz55gkgMKVFu2z&Q=85&crop=center&errorpic=transparent&W=600"
-         alt=''/>
-    <img id="4" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwqyYISL2ooSiYLeH96mfe2XxvhzbkVIE5dSKJ1linFblc6sOLcSLYrosxim4tUN1n&Q=85&crop=center&errorpic=transparent&W=600"
-         alt=''/>
-    <img id="5" class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwfcA4e5nQxQQNlBeTueuhYymmN30/UXBNBN8GSQG9SakETa//g0/UKcUHwGqaMYCo&Q=85&crop=center&errorpic=transparent&W=600"
+    <img class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwfcA4e5nQxQQNlBeTueuhYymmN30/UXBNBN8GSQG9SakETa//g0/UKcUHwGqaMYCo&Q=85&crop=center&errorpic=transparent&W=600"
+         alt='' />
+    <img class="im" src="https://thumbs.web.sapo.io/?epic=4QMMRlDAQE4tcnfE6+rAJLiZphtF01krKWk12QWdXvS38Bzb8MSzp4pMq033QzPMzJLwqyYISL2ooSiYLeH96mfe2XxvhzbkVIE5dSKJ1linFblc6sOLcSLYrosxim4tUN1n&Q=85&crop=center&errorpic=transparent&W=600"
+         alt='' />
+    <img class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+uhYT1qq++ke6axw82Gosxml+cTitjOGBOE4+SPzV+0azaS9LJUrz55gkgMKVFu2z&Q=85&crop=center&errorpic=transparent&W=600"
+         alt='' />
+    <img class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+X13GbOQTnz6S7MggeU7yYO0GjcabRXfoEOf8NQOrBG6xKlj5Mcv3Ae06BMBkN7+g&Q=85&crop=center&errorpic=transparent&W=600"
+         alt='' />
+    <img class="im" src="https://thumbs.web.sapo.io/?epic=Qc5ZNn8jP4LagsFy3mAAXibgyuL0BTJyMed2830xjmUt9hEX5tiPWG7ZvqqJJh617/f+2sNczewaNx6Al8sIrNL/GiTOtQWsfhEyTsBwrM5JNe5but/ui/2+Nej4vrJt1Tme&Q=85&crop=center&errorpic=transparent&W=600"
          alt='' class="responsive"/>
-
 
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
-
-    $(document).ready(function (){
+    $(document).ready(function () {
         $(".container").dblclick(function () {
-            //window.location.href="";
             alert("The paragraph was double-clicked.");
         });
     });

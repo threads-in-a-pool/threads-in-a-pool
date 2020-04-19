@@ -28,9 +28,14 @@ public class HtmlController {
         return "about";
     }
 
-    @GetMapping("/tickets")
-    public String login() {
-        return "tickets";
+    @GetMapping("/tickets/{id}")
+    public String login(@PathVariable Integer id) {
+
+        if (id > 5 || id < 1){
+            return "404";
+        }
+        
+        return "swipeEvent" + id;
     }
 
     @GetMapping("/register")
