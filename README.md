@@ -11,7 +11,7 @@ cancelled events and concert, there is a need to offer people a solution to this
 by engaging with the entertainment industry and people to make plans that would involve rescheduling, exchange, buy or sell 
 tickets of affected events.
 
-##The Development
+## The Development
 We divided the project into sprints of about 8 hours of interval. We started by reading the lyrics of the song and watching 
 the videoclip. We then brainstormed the basic idea for the project. When the group was satisfied with the idea, we set out to 
 build the structure of the project and map the database.
